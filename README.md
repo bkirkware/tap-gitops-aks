@@ -90,3 +90,14 @@ Optionally run k9s to watch TAP install and configuraiton on your target cluster
 - Deploy tanzu-cluster-essentials to cluster
 - Authenticate / login from your workstation to GitHub
 - Create a seal-secrets (sops) encryption key (using 'age-keygen" cli
+
+## Brian's Notes
+
+Since we're using a cluster created by TMC, we need to exclude FluxCD by adding this to `clusters/taplab/cluster-config/values/tap-non-sensitive-values.yaml`
+
+```yaml
+tap_install:
+  values:
+    excluded_packages: 
+    - fluxcd.source.controller.tanzu.vmware.com
+```

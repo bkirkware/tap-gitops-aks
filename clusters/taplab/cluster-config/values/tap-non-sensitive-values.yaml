@@ -1,6 +1,7 @@
 tap_install:
   values:
-    excluded_packages: []
+    excluded_packages: 
+    - fluxcd.source.controller.tanzu.vmware.com
     shared:
       ingress_domain: tap.kirkware.net
       ingress_issuer: letsencrypt-production
